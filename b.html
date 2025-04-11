@@ -1,0 +1,126 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Music</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-10">
+    <div class="max-w-lg mx-auto bg-white p-5 rounded-lg shadow-lg">
+        <h1 class="text-2xl font-bold mb-4">Mood-Based Music Recommendation</h1>
+        <form method="POST" class="flex flex-col gap-2">
+            <select name="mood" class="p-2 border rounded">
+                <option value="Happy">Happy 😊</option>
+                <option value="Sad">Sad 😢</option>
+                <option value="Relaxed">Relaxed 😌</option>
+                <option value="Energetic">Energetic ⚡</option>
+            </select>
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Get Songs</button>
+        </form>
+
+        {% if songs %}
+            <h2 class="text-xl font-bold mt-4">Songs for "{{ mood }}":</h2>
+            <ul class="mt-2">
+                {% for song in songs %}
+                    <li class="bg-gray-200 p-2 mt-2 rounded">
+                        🎵 <strong>{{ song["name"] }}</strong> by {{ song["artist"]["name"] }}
+                        <a href="{{ song['url'] }}" class="text-blue-500" target="_blank">Listen</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</body>
+</html> -->
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            overflow: hidden;
+        }
+        .glass {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+        }
+        .glow-button {
+            background: linear-gradient(45deg, #ff512f, #dd2476);
+            box-shadow: 0px 0px 15px rgba(255, 81, 47, 0.6);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .glow-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 0px 25px rgba(255, 81, 47, 0.8);
+        }
+        .floating-card {
+            transition: transform 0.3s ease;
+        }
+        .floating-card:hover {
+            transform: translateY(-10px) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div id="background-effect"></div>
+    
+    <div class="flex flex-col items-center justify-center min-h-screen">
+        <div class="glass max-w-lg w-full text-center p-8">
+            <h1 class="text-4xl font-bold text-blue-400">🎵 Mood-Based Music 🎶</h1>
+            <form method="POST" class="mt-6">
+                <select name="mood" class="p-3 w-full border rounded-lg text-lg text-black">
+                    <option value="Happy">Happy 😊</option>
+                    <option value="Sad">Sad 😢</option>
+                    <option value="Relaxed">Relaxed 😌</option>
+                    <option value="Energetic">Energetic ⚡</option>
+                </select>
+                <button type="submit" class="glow-button text-white text-lg px-6 py-3 rounded-lg mt-4 w-full">
+                    Get Songs 🎶
+                </button>
+            </form>
+            
+            {% if songs %}
+                <h2 class="text-xl font-bold mt-6">Songs for "{{ mood }}"</h2>
+                <div class="mt-4 space-y-4">
+                    {% for song in songs %}
+                        <div class="floating-card bg-gray-800 p-4 rounded-lg shadow-lg">
+                            <strong class="text-lg text-blue-300">{{ song["name"] }}</strong> <br>
+                            🎤 {{ song["artist"]["name"] }}
+                            <a href="{{ song['url'] }}" target="_blank" class="block mt-2 text-blue-500">🎧 Listen</a>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    
+    <script>
+        VANTA.GLOBE({
+            el: "#background-effect",
+            color: 0xff5500,
+            backgroundColor: 0x0,
+            size: 1.5,
+            speed: 1.2
+        });
+    </script>
+</body>
+</html> -->

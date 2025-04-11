@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood-Based Music</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+            background-size: 400% 400%;
+            animation: gradientBG 10s infinite alternate;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            100% { background-position: 100% 50%; }
+        }
+
+        .card {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body class="p-10 flex items-center justify-center min-h-screen">
+
+    <div class="max-w-lg w-full bg-white p-6 rounded-lg shadow-xl text-center">
+        <h1 class="text-3xl font-bold mb-4">🎵 Mood-Based Music 🎶</h1>
+        <form method="POST" class="flex flex-col gap-4">
+            <select name="mood" class="p-3 border rounded-lg text-lg">
+                <option value="Happy">Happy 😊</option>
+                <option value="Sad">Sad 😢</option>
+                <option value="Relaxed">Relaxed 😌</option>
+                <option value="Energetic">Energetic ⚡</option>
+            </select>
+            <button type="submit" class="bg-gradient-to-r from-pink-500 to-purple-500 text-white text-lg px-6 py-3 rounded-lg transition transform hover:scale-105">
+                Get Songs 🎶
+            </button>
+        </form>
+
+        {% if songs %}
+            <h2 class="text-xl font-bold mt-6 text-gray-700">Songs for "{{ mood }}"</h2>
+            <div class="mt-4 space-y-4">
+                {% for song in songs %}
+                    <div class="card bg-gray-100 p-4 rounded-lg shadow-lg transition transform hover:scale-105">
+                        <strong class="text-lg">{{ song["name"] }}</strong> <br>
+                        🎤 {{ song["artist"]["name"] }}  
+                        <a href="{{ song['url'] }}" target="_blank" class="block mt-2 text-blue-500">🎧 Listen</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <script>
+        anime({
+            targets: '.card',
+            opacity: [0, 1],
+            translateY: [20, 0],
+            delay: anime.stagger(200),
+            duration: 1000,
+            easing: 'easeOutExpo'
+        });
+    </script>
+</body>
+</html> 
+
+

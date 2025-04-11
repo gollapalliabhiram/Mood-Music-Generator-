@@ -1,0 +1,129 @@
+docker build -t mood-music .
+docker run -p 5000:5000 mood-music
+
+
+
+
+2428c606bbcb4671a5f473aa127edf51
+
+
+
+
+7df0684caea34616a4ab21e9c703859a
+
+{'access_token': 'BQDaFmh0jVmZW_oHW-t_GdvOdyPWofpuiB3DTfUnKoGLxzp1ih70nXheXSymf6PUvT-hjhxKv5VAM5fs4k674YFb-YNTz6iNqvIVpc4TJ_P0aT7ih6HwAQY3Sn_t2hNkl_abOoS6nzI', 'token_type': 'Bearer', 'expires_in': 3600}
+
+
+ngrok token :- 2uYb5p0Ycyjl3mnkz6SmW4icDqA_4Mm26hgpNBDpyZKhnyRw2
+
+image id of mood -music :- 21d6640a69cc
+
+
+and also madam mentioned about this :-
+How to Push and Pull a Docker Image from Docker Hub
+Docker is an open-source platform that enables developers to build, ship, and run applications within containers. Containers encapsulate all the dependencies and libraries required to run an application, ensuring consistency across different environments.
+
+On the other hand, Docker Hub is a cloud-based repository that hosts a vast collection of Docker images. It serves as a centralized resource for developers to store, share, and collaborate on Docker images. With Docker Hub, developers can easily find pre-built images for popular software applications, libraries, and frameworks, accelerating the development process.
+
+In this article, you will learn how to push and pull a docker image from the docker hub.
+
+Understanding Push and Pull in Docker
+Pushing and pulling are essential operations in Docker, allowing users to upload their images to Docker Hub and retrieve existing images from the repository.
+
+Pushing a Docker Image to Docker Hub
+To Docker push image to Docker Hub entails uploading a Docker container image from your local machine or server to Docker Hub’s registry. This process mirrors sharing a pre-assembled software package with others. By pushing an image, you’re sharing the complete setup of an application along with its required components. This allows others to access and deploy the application as a container in their environments, maintaining uniformity across various setups.
+
+Pulling a Docker Image from Docker Hub
+To Docker pull image from Docker Hub involves downloading a Docker container image from Docker Hub’s registry onto your local machine or server. It’s similar to fetching a pre-built software package for use in your environment. When you pull an image, you’re retrieving the exact blueprint of an application along with its dependencies. This enables you to deploy the application as a container on your system, ensuring consistency across different environments.
+
+How to Push and Pull a Docker Image from Docker Hub
+Let’s understand how to push Docker image to Docker hub and further we will discuss how to pull Docker image to Docker hub
+
+Step 1: Install Docker
+
+Before you can push or pull images to and from Docker Hub, you’ll need to set up your environment by installing Docker and creating a Docker Hub account.
+
+The installation of docker depends on the operating system you are using. You can visit this link if you want to install Docker on Windows or if you are a Linux user check out our guide on how to Install Docker on Ubuntu.
+
+Step 2: Log in to Docker Hub
+
+After installing Docker you also need to create a Docker Hub Account.
+
+docker account
+
+
+Signing up for a Docker Hub account is free and grants you access to both public and private repositories.
+
+After that, you can sign in directly if you are using Windows. In case you are using Linux then you can execute the below command to log in to Docker:
+
+docker login
+This command will prompt you to enter your Docker Hub username and password.
+
+docker username password
+Get an affordable Ubuntu Server for a Docker Instance
+
+Get the reliability of the world’s most popular Linux distro and the flexibility of a virtual server. Enjoy blazing-fast speeds and low latency.
+
+Cheap Ubuntu Server
+Step 3: Tag the Docker Image
+
+Before pushing an image to Docker Hub, you need to ensure that it’s properly tagged with the repository name, version, and optionally, a specific tag.
+
+For this, you need to first find the docker image that you want to tag using the below command:
+
+docker images
+docker images
+
+
+Now use the following command to tag an image:
+
+docker tag <image_id> <username>/<repository_name>:<tag>
+Replace <image_id> with the ID of the Docker image you want to push, <username> with your Docker Hub username, <repository_name> with the name of your repository on Docker Hub, and <tag> with a version tag for the image.
+
+So the actual command in our case could be:
+
+sudo docker tag d2c94e258dcb user864/myhello:latest
+docker tag
+
+
+Tagging Docker images is crucial for managing versions and organizing repositories. Tags help identify different image versions, facilitating push and pull operations from registries like Docker Hub. They enable version control, allowing easy tracking of changes and reverting to previous states when needed. Overall, tagging ensures clarity, organization, and efficient image management within Docker environments.
+
+Learn about What is Docker and What Benefits Does It Offer?
+
+Step 4. Push the Docker Image
+
+Once the image is tagged, you can run the following command for Docker hub push:
+
+docker push <username>/<repository_name>:<tag>
+Replace <username>/<repository_name>:<tag> with the tagged image name you want to push.
+
+sudo docker push user864/myhello:latest
+push docker
+
+
+Step 5. Pulling a Docker Image
+
+To pull a Docker image from Docker Hub, you simply need to specify the image name:
+
+docker pull <username>/<repository_name>:<tag>
+Replace <username>/<repository_name>:<tag> with the image name you want to Docker hub pull.
+
+Since we want to pull the image from “user864” named “myhello” with the tag “latest”, the command would be:
+
+docker pull user864/myhello:latest
+pull docker
+
+
+Pulling an image from Docker Hub is a straightforward process facilitated by the Docker command-line interface. You can search for images using keywords and pull the desired image to your local environment.
+
+Security Considerations
+When working with Docker images, security should be a top priority. Always verify the integrity and authenticity of images before pulling or using them. Utilize Docker Content Trust to enable image signing and verification, ensuring that only trusted images are used in your environment. Regularly update your images to patch any security vulnerabilities and adhere to the principle of least privilege when configuring image permissions.
+
+Conclusion
+Docker and Docker Hub streamline the process of building, sharing, and deploying applications through containerization. Docker Hub serves as a comprehensive repository, allowing collaboration and accelerating development by providing access to a wide range of pre-built images.
+
+Learning to push and pull images from Docker Hub empowers developers to efficiently manage their environments, ensuring cons
+
+
+Why is it so and is it required for my abovve project if so tell me how and explain what it is 
+step by step 
